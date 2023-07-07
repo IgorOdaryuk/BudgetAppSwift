@@ -16,6 +16,8 @@
 		A478F4CB2A58526B009CD8D4 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A478F4CA2A58526B009CD8D4 /* PreviewData.swift */; };
 		A478F4CD2A5853A2009CD8D4 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A478F4CC2A5853A2009CD8D4 /* TransactionRow.swift */; };
 		A478F4D02A585B70009CD8D4 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = A478F4CF2A585B70009CD8D4 /* SwiftUIFontIcon */; };
+		A478F4D42A585D0F009CD8D4 /* TransactionViewListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A478F4D32A585D0F009CD8D4 /* TransactionViewListModel.swift */; };
+		A478F4D62A58697F009CD8D4 /* RecentTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A478F4D52A58697F009CD8D4 /* RecentTransactionList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A478F4C82A584D40009CD8D4 /* TranscationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscationModel.swift; sourceTree = "<group>"; };
 		A478F4CA2A58526B009CD8D4 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		A478F4CC2A5853A2009CD8D4 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
+		A478F4D32A585D0F009CD8D4 /* TransactionViewListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewListModel.swift; sourceTree = "<group>"; };
+		A478F4D52A58697F009CD8D4 /* RecentTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				A478F4B82A58474A009CD8D4 /* BudgetAppSwiftApp.swift */,
 				A478F4CC2A5853A2009CD8D4 /* TransactionRow.swift */,
 				A478F4C82A584D40009CD8D4 /* TranscationModel.swift */,
+				A478F4D32A585D0F009CD8D4 /* TransactionViewListModel.swift */,
+				A478F4D52A58697F009CD8D4 /* RecentTransactionList.swift */,
 				A478F4BA2A58474A009CD8D4 /* ContentView.swift */,
 				A478F4BC2A58474A009CD8D4 /* Assets.xcassets */,
 				A478F4BE2A58474A009CD8D4 /* Preview Content */,
@@ -158,8 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A478F4CB2A58526B009CD8D4 /* PreviewData.swift in Sources */,
+				A478F4D62A58697F009CD8D4 /* RecentTransactionList.swift in Sources */,
 				A478F4C92A584D40009CD8D4 /* TranscationModel.swift in Sources */,
 				A478F4BB2A58474A009CD8D4 /* ContentView.swift in Sources */,
+				A478F4D42A585D0F009CD8D4 /* TransactionViewListModel.swift in Sources */,
 				A478F4CD2A5853A2009CD8D4 /* TransactionRow.swift in Sources */,
 				A478F4C72A584957009CD8D4 /* Extensions.swift in Sources */,
 				A478F4B92A58474A009CD8D4 /* BudgetAppSwiftApp.swift in Sources */,
