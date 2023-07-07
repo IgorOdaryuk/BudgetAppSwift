@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUIFontIcon
 
-struct Transaction: Identifiable, Decodable {
+struct Transaction: Identifiable, Decodable, Hashable {
     let id: Int
     let date: String
     let institution: String
@@ -22,6 +23,14 @@ struct Transaction: Identifiable, Decodable {
     var isExpense: Bool
     var isEdited: Bool
     
+    var icon: FontAwesomeCode {
+        if let category = Category.all.first(where: { $0.id == categoryId }) {
+            return category.icon
+        }
+        
+        return .question
+    }
+    
     var dateParsed: Date {
         date.dateParsed()
     }
@@ -35,3 +44,81 @@ enum TransactionType: String {
     case debit = "debit"
     case credit = "credit"
 }
+
+
+
+struct Category {
+    let id: Int
+    let name: String
+    let icon: FontAwesomeCode
+    var mainCategoryId: Int?
+}
+
+
+extension Category {
+    static let autoAndTransportation = Category(id: 1, name: "Auto & Transport", icon: .car_alt)
+    static let billsAndUtilities = Category(id: 2, name: "Auto & Transport", icon: .car_alt)
+    static let entertainment = Category(id: 3, name: "Entertainment", icon: .file_invoice_dollar)
+    static let feesAndCharges = Category(id: 4, name: "Fees And Charges", icon: .film)
+    static let foodAndDining = Category(id: 5, name: "Food And Dining", icon: .hand_holding_usd)
+    static let home = Category(id: 6, name: "Home", icon: .hamburger)
+    static let income = Category(id: 7, name: "Income", icon: .home)
+    static let shopping = Category(id: 8, name: "Shopping", icon: .shopping_cart)
+    static let transfer = Category(id: 9, name: "Transfer", icon: .expand_alt)
+    
+    static let publicTransportation = Category(id: 101, name: "Auto & Transport", icon: .car_alt, mainCategoryId: 91)
+    static let taxi = Category(id: 102, name: "Taxi", icon: .car_alt, mainCategoryId: 1)
+    static let mobilePhone = Category(id: 201, name: "mobilePhone", icon: .car_alt, mainCategoryId: 2)
+    static let moviesAndDVDs = Category(id: 301, name: "moviesAndDVDs", icon: .film, mainCategoryId: 3)
+    static let bankFee = Category(id: 401, name: "BankFee", icon: .hand_holding_usd, mainCategoryId: 4)
+    static let financeCharge = Category(id: 402, name: "Finance Charge", icon: .hand_holding_usd, mainCategoryId: 4)
+    static let groceries = Category(id: 501, name: "Groseries", icon: .shopping_basket, mainCategoryId: 5)
+    static let rest = Category(id: 502, name: "Rest", icon: .utensils, mainCategoryId: 5)
+    static let rent = Category(id: 601, name: "Rent", icon: .house_user, mainCategoryId: 6)
+    static let homeSuplies = Category(id: 601, name: "Home Suplies", icon: .lightbulb, mainCategoryId: 6)
+    static let paycheque = Category(id: 701, name: "Paycheque", icon: .dollar_sign, mainCategoryId: 7)
+    static let software = Category(id: 801, name: "Software", icon: .icons, mainCategoryId: 8)
+    static let creditCardPayment = Category(id: 901, name: "creditCardPayment", icon: .exchange_alt, mainCategoryId: 9)
+}
+
+extension Category {
+    static let categories: [Category] = [
+            .autoAndTransportation,
+            .billsAndUtilities,
+            .entertainment,
+            .feesAndCharges,
+            .foodAndDining,
+            .home,
+            .income,
+            .shopping,
+            .transfer
+    ]
+    
+    static let subCategories: [Category] = [
+        .publicTransportation,
+        .taxi,
+        .mobilePhone,
+        .moviesAndDVDs,
+        .bankFee,
+        .financeCharge,
+        .groceries,
+        .rest,
+        .rent,
+        .homeSuplies,
+        .paycheque,
+        .software,
+        .creditCardPayment
+    ]
+    
+    static let all: [Category] = categories + subCategories
+}
+
+
+
+
+
+
+
+
+
+
